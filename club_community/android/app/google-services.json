@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948720711195",
+    "project_id": "club-data-e13be",
+    "storage_bucket": "club-data-e13be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948720711195:android:7d3711f3a2d61225fbaabe",
+        "android_client_info": {
+          "package_name": "com.example.club_community"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAndFzXMSZRxnXBbpn51-aIGR2B0F-fMdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
