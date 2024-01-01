@@ -24,7 +24,11 @@ class _SearchScreenState extends State<SearchScreen> {
           child: TextFormField(
             controller: searchController,
             decoration:
-                const InputDecoration(labelText: 'Search for a user...'),
+                const InputDecoration(
+                    labelText: 'Search for a user...',
+                    labelStyle: TextStyle(color: mobileSearchColor),
+                ),
+            style: TextStyle(color: primaryColor),
             onFieldSubmitted: (String _) {
               setState(() {
                 isShowUsers = true;
@@ -68,6 +72,10 @@ class _SearchScreenState extends State<SearchScreen> {
                         ),
                         title: Text(
                           (snapshot.data! as dynamic).docs[index]['username'],
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: primaryColor,
+                          ),
                         ),
                       ),
                     );

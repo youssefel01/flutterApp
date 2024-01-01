@@ -105,6 +105,7 @@ class _PostCardState extends State<PostCard> {
                           widget.snap['username'].toString(),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            color: primaryColor,
                           ),
                         ),
                       ],
@@ -149,7 +150,10 @@ class _PostCardState extends State<PostCard> {
                             },
                           );
                         },
-                        icon: const Icon(Icons.more_vert),
+                        icon: const Icon(
+                            Icons.more_vert,
+                            color: mobileSearchColor,
+                        ),
                       )
                     : Container(),
               ],
@@ -193,7 +197,7 @@ class _PostCardState extends State<PostCard> {
                     },
                     child: const Icon(
                       Icons.favorite,
-                      color: Colors.white,
+                      color: primaryColor,
                       size: 100,
                     ),
                   ),
@@ -215,6 +219,7 @@ class _PostCardState extends State<PostCard> {
                         )
                       : const Icon(
                           Icons.favorite_border,
+                          color: primaryColor,
                         ),
                   onPressed: () => FireStoreMethods().likePost(
                     widget.snap['postId'].toString(),
@@ -225,7 +230,8 @@ class _PostCardState extends State<PostCard> {
               ),
               IconButton(
                 icon: const Icon(
-                  Icons.comment_outlined,
+                  Icons.mode_comment_outlined,
+                  color: primaryColor,
                 ),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
@@ -235,17 +241,18 @@ class _PostCardState extends State<PostCard> {
                   ),
                 ),
               ),
-              IconButton(
-                  icon: const Icon(
-                    Icons.send,
-                  ),
-                  onPressed: () {}),
-              Expanded(
-                  child: Align(
-                alignment: Alignment.bottomRight,
-                child: IconButton(
-                    icon: const Icon(Icons.bookmark_border), onPressed: () {}),
-              ))
+              // share and shave are upcoming features
+              // IconButton(
+              //     icon: const Icon(
+              //       Icons.send,
+              //     ),
+              //     onPressed: () {}),
+              // Expanded(
+              //     child: Align(
+              //   alignment: Alignment.bottomRight,
+              //   child: IconButton(
+              //       icon: const Icon(Icons.bookmark_border), onPressed: () {}),
+              // ))
             ],
           ),
           //DESCRIPTION AND NUMBER OF COMMENTS
@@ -262,7 +269,12 @@ class _PostCardState extends State<PostCard> {
                         .copyWith(fontWeight: FontWeight.w800),
                     child: Text(
                       '${widget.snap['likes'].length} likes',
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 13, // Example font size
+                        fontWeight: FontWeight.normal,
+                      ),
+                      // style: Theme.of(context).textTheme.bodyMedium,
                     )),
                 Container(
                   width: double.infinity,

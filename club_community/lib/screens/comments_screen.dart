@@ -53,6 +53,10 @@ class _CommentsScreenState extends State<CommentsScreen> {
         backgroundColor: mobileBackgroundColor,
         title: const Text(
           'Comments',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: primaryColor,
+          ),
         ),
         centerTitle: false,
       ),
@@ -98,8 +102,10 @@ class _CommentsScreenState extends State<CommentsScreen> {
                     controller: commentEditingController,
                     decoration: InputDecoration(
                       hintText: 'Comment as ${user.username}',
+                      hintStyle: TextStyle(color: Colors.grey[500]),
                       border: InputBorder.none,
                     ),
+                    style: TextStyle(color: primaryColor),
                   ),
                 ),
               ),
@@ -114,7 +120,9 @@ class _CommentsScreenState extends State<CommentsScreen> {
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                   child: const Text(
                     'Post',
-                    style: TextStyle(color: Colors.blue),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: blueColor),
                   ),
                 ),
               )

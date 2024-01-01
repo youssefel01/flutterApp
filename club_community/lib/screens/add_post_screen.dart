@@ -117,24 +117,30 @@ class _AddPostScreenState extends State<AddPostScreen> {
   Widget build(BuildContext context) {
     final UserProvider userProvider = Provider.of<UserProvider>(context);
 
-    return _file == null
+    return _file == null // if No file is selected show the upload icon
         ? Center(
             child: IconButton(
               icon: const Icon(
                 Icons.upload,
+                color: primaryColor,
               ),
               onPressed: () => _selectImage(context),
             ),
           )
-        : Scaffold(
+        : Scaffold( // else show the add post form
             appBar: AppBar(
               backgroundColor: mobileBackgroundColor,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
+                color: primaryColor,
                 onPressed: clearImage,
               ),
               title: const Text(
-                'Post to',
+                'Post to Community',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
+                ),
               ),
               centerTitle: false,
               actions: <Widget>[
@@ -147,7 +153,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
                   child: const Text(
                     "Post",
                     style: TextStyle(
-                        color: Colors.blueAccent,
+                        color: blueColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0),
                   ),
@@ -171,12 +177,15 @@ class _AddPostScreenState extends State<AddPostScreen> {
                       ),
                     ),
                     SizedBox(
+                      height: 200.0,
                       width: MediaQuery.of(context).size.width * 0.3,
                       child: TextField(
                         controller: _descriptionController,
                         decoration: const InputDecoration(
                             hintText: "Write a caption...",
+                            hintStyle: TextStyle(color: secondaryColor),
                             border: InputBorder.none),
+                        style: TextStyle(color: primaryColor),
                         maxLines: 8,
                       ),
                     ),

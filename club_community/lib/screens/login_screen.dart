@@ -138,7 +138,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: const Text(
-                        'Dont have an account?',
+                        'Don\'t have an account?',
+                        style: TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                     ),
                     GestureDetector(
@@ -153,6 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ' Signup.',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
+                            color: primaryColor,
                           ),
                         ),
                       ),

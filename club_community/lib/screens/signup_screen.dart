@@ -100,7 +100,7 @@ class _SignupScreenState extends State<SignupScreen> {
               SvgPicture.asset(
                 'assets/ic_club.svg',
                 color: primaryColor,
-                height: 64,
+                height: 54,
               ),
               const SizedBox(
                 height: 64,
@@ -116,7 +116,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       : const CircleAvatar(
                           radius: 64,
                           backgroundImage: NetworkImage(
-                              'https://i.stack.imgur.com/l60Hf.png'),
+                              'https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Image.png'),
                           backgroundColor: Colors.red,
                         ),
                   Positioned(
@@ -124,7 +124,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     left: 80,
                     child: IconButton(
                       onPressed: selectImage,
-                      icon: const Icon(Icons.add_a_photo),
+                      icon: const Icon(
+                          Icons.add_a_photo,
+                          color: primaryColor,
+                      ),
                     ),
                   )
                 ],
@@ -200,6 +203,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     child: const Text(
                       'Already have an account?',
+                      style: TextStyle(
+                        color: primaryColor,
+                      ),
                     ),
                   ),
                   GestureDetector(
@@ -214,6 +220,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         ' Login.',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          color: primaryColor,
                         ),
                       ),
                     ),

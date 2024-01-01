@@ -76,6 +76,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               backgroundColor: mobileBackgroundColor,
               title: Text(
                 userData['username'],
+                style: TextStyle(
+                  color: primaryColor,
+                ),
               ),
               centerTitle: false,
             ),
@@ -108,6 +111,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     buildStatColumn(following, "following"),
                                   ],
                                 ),
+
+                                const SizedBox(height: 10), // add space
+
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -155,9 +161,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               )
                                             : FollowButton(
                                                 text: 'Follow',
-                                                backgroundColor: Colors.blue,
+                                                backgroundColor: blueColor,
                                                 textColor: Colors.white,
-                                                borderColor: Colors.blue,
+                                                borderColor: blueColor,
                                                 function: () async {
                                                   await FireStoreMethods()
                                                       .followUser(
@@ -188,6 +194,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           userData['username'],
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
+                            color: primaryColor,
                           ),
                         ),
                       ),
@@ -198,6 +205,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         child: Text(
                           userData['bio'],
+                          style: const TextStyle(
+                            color: primaryColor,
+                          ),
                         ),
                       ),
                     ],
@@ -255,6 +265,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
+            color: primaryColor,
           ),
         ),
         Container(
@@ -264,7 +275,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w400,
-              color: Colors.grey,
+              color: mobileSearchColor,
             ),
           ),
         ),

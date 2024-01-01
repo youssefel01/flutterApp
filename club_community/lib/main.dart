@@ -13,8 +13,7 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // initialise app based on platform- web or mobile
-  if (kIsWeb) {
+  // initialise app based on platform web or mobile
     await Firebase.initializeApp(
       options: const FirebaseOptions(
         apiKey: "AIzaSyC9h9lyH1xoioGLZjYRjkIPPD0gPLGiRQQ",
@@ -24,9 +23,7 @@ void main() async {
         storageBucket: 'club-data-e13be.appspot.com',
       ),
     );
-  } else {
-    await Firebase.initializeApp();
-  }
+
   runApp(const MyApp());
 }
 
@@ -41,7 +38,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Instagram Clone',
+        title: 'Club Community',
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: mobileBackgroundColor,
         ),

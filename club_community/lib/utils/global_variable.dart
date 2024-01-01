@@ -7,6 +7,7 @@ import 'package:club_community/screens/search_screen.dart';
 
 const webScreenSize = 600;
 
+// app widget to scroll on
 List<Widget> homeScreenItems = [
   const FeedScreen(),
   const SearchScreen(),

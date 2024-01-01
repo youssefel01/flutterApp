@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../utils/colors.dart';
+
 class CommentCard extends StatelessWidget {
   final snap;
   const CommentCard({Key? key, required this.snap}) : super(key: key);
@@ -30,10 +32,16 @@ class CommentCard extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: snap.data()['name'],
-                          style: const TextStyle(fontWeight: FontWeight.bold,)
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: primaryColor,
+                          ),
                         ),
                         TextSpan(
                           text: ' ${snap.data()['text']}',
+                          style: const TextStyle(
+                            color: primaryColor,
+                          ),
                         ),
                       ],
                     ),
@@ -45,7 +53,10 @@ class CommentCard extends StatelessWidget {
                         snap.data()['datePublished'].toDate(),
                       ),
                       style: const TextStyle(
-                          fontSize: 12, fontWeight: FontWeight.w400,),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: mobileSearchColor,
+                      ),
                     ),
                   )
                 ],
@@ -57,6 +68,7 @@ class CommentCard extends StatelessWidget {
             child: const Icon(
               Icons.favorite,
               size: 16,
+              color: blueColor,
             ),
           )
         ],

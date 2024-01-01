@@ -11,7 +11,7 @@ class MobileScreenLayout extends StatefulWidget {
 }
 
 class _MobileScreenLayoutState extends State<MobileScreenLayout> {
-  int _page = 0;
+  int _page = 0; // to track the page selected
   late PageController pageController; // for tabs animation
 
   @override
@@ -31,9 +31,9 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
       _page = page;
     });
   }
-
+  // onclick event for icons ( with the use of PageController )
   void navigationTapped(int page) {
-    //Animating Page
+    // Animating Page ( jump between page on the layout body )
     pageController.jumpToPage(page);
   }
 
@@ -42,16 +42,19 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     return Scaffold(
       body: PageView(
         controller: pageController,
-        onPageChanged: onPageChanged,
+        onPageChanged: onPageChanged, // change the _page ( page number )
         children: homeScreenItems,
+        physics: const NeverScrollableScrollPhysics(), // no scroll between page ( slid scroll)
       ),
+
+      // Mobile bottom app  bar
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: (_page == 0) ? primaryColor : secondaryColor,
+              color: (_page == 0) ? primaryColor : secondaryColor, // set color based on the page selected
             ),
             label: '',
             backgroundColor: primaryColor,
@@ -72,7 +75,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
               backgroundColor: primaryColor),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite,
+              Icons.notifications_active_rounded,
               color: (_page == 3) ? primaryColor : secondaryColor,
             ),
             label: '',
@@ -87,6 +90,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
             backgroundColor: primaryColor,
           ),
         ],
+
+        // onclick event for icons
         onTap: navigationTapped,
         currentIndex: _page,
       ),
